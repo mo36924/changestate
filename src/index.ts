@@ -1,3 +1,5 @@
+export const changestate = "changestate";
+
 declare global {
   interface Window {
     onchangestate?: null | ((this: Window, ev: Event) => any);
@@ -31,7 +33,7 @@ if (typeof window !== "undefined" && window.onchangestate === undefined) {
 
   [...events, "popstate"].forEach((type) => {
     addEventListener(type.toLowerCase(), () => {
-      const event = createEvent("changestate");
+      const event = createEvent(changestate);
       dispatchEvent(event);
 
       if (typeof window.onchangestate === "function") {
@@ -65,5 +67,3 @@ if (typeof window !== "undefined" && window.onchangestate === undefined) {
     } while ((t = t.parentNode));
   });
 }
-
-export {};
