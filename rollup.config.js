@@ -9,6 +9,7 @@ export default [
         file: "dist/index.js",
         format: "commonjs",
         sourcemap: true,
+        exports: "auto",
       },
       {
         file: "dist/index.mjs",

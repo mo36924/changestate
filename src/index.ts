@@ -1,4 +1,4 @@
-export const changestate = "changestate";
+const changestate = "changestate";
 
 declare global {
   interface Window {
@@ -67,3 +67,5 @@ if (typeof window !== "undefined" && window.onchangestate === undefined) {
     } while ((t = t.parentNode));
   });
 }
+
+export default changestate;
